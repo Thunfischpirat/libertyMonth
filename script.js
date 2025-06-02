@@ -3,7 +3,6 @@ class ProfileFrameEditor {
         this.canvas = document.getElementById('preview-canvas');
         this.ctx = this.canvas.getContext('2d');
         this.frameImage = new Image();
-        this.processedFrameCanvas = null;
         this.userImage = null;
         this.scale = 1;
         this.offsetX = 0;
@@ -35,33 +34,7 @@ class ProfileFrameEditor {
         this.frameImage.onload = () => {
             this.drawCanvas();
         };
-        this.frameImage.src = 'image/LibertyMonth.png';
-    }
-
-    processFrameImage() {
-        const tempCanvas = document.createElement('canvas');
-        const tempCtx = tempCanvas.getContext('2d');
-        
-        tempCanvas.width = this.frameSize;
-        tempCanvas.height = this.frameSize;
-        
-        tempCtx.drawImage(this.frameImage, 0, 0, tempCanvas.width, tempCanvas.height);
-        
-        const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
-        const data = imageData.data;
-        
-        for (let i = 0; i < data.length; i += 4) {
-            const r = data[i];
-            const g = data[i + 1];
-            const b = data[i + 2];
-            
-            if (r > 250 && g > 250 && b > 250) {
-                data[i + 3] = 0;
-            }
-        }
-        
-        tempCtx.putImageData(imageData, 0, 0);
-        this.processedFrameCanvas = tempCanvas;
+        this.frameImage.src = 'image/LibertyMonth_transparent.png';
     }
 
     setupEventListeners() {
@@ -214,9 +187,7 @@ class ProfileFrameEditor {
         }
         
         if (this.frameImage.complete) {
-            this.ctx.globalCompositeOperation = 'multiply';
             this.ctx.drawImage(this.frameImage, 0, 0, this.canvas.width, this.canvas.height);
-            this.ctx.globalCompositeOperation = 'source-over';
         }
     }
 

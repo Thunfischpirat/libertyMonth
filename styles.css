@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
     min-height: 100vh;
     padding: 20px;
 }
@@ -14,33 +14,36 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.98);
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    border: 3px solid #FFD700;
 }
 
 header {
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
     text-align: center;
     padding: 40px 20px;
-    color: #333;
+    color: #1a1a1a;
 }
 
 header h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 header p {
     font-size: 1.2rem;
-    opacity: 0.8;
+    opacity: 0.9;
+    font-weight: 600;
 }
 
 main {
     padding: 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .upload-section {
@@ -50,20 +53,26 @@ main {
 
 .upload-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #FFD700;
     padding: 20px 40px;
     border-radius: 50px;
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+    border: 2px solid #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .upload-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 15px 40px rgba(26, 26, 26, 0.4);
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    color: #FFF;
+    border-color: #FFC107;
 }
 
 .upload-btn input {
@@ -81,23 +90,25 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #FFD700;
 }
 
 #preview-canvas {
     max-width: 100%;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
 }
 
 .controls {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid #FFD700;
 }
 
 .control-group {
@@ -107,18 +118,21 @@ main {
 .control-group label {
     display: block;
     font-weight: 600;
-    color: #333;
+    color: #FFD700;
     margin-bottom: 8px;
     font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .control-group input[type="range"] {
     width: 100%;
-    height: 6px;
-    border-radius: 3px;
-    background: #ddd;
+    height: 8px;
+    border-radius: 4px;
+    background: #444;
     outline: none;
     margin-bottom: 5px;
+    border: 1px solid #FFD700;
 }
 
 .control-group input[type="range"]::-webkit-slider-thumb {
@@ -126,25 +140,26 @@ main {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+    border: 2px solid #1a1a1a;
 }
 
 .control-group input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
     cursor: pointer;
-    border: none;
-    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+    border: 2px solid #1a1a1a;
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
 }
 
 .control-group span {
     font-size: 0.9rem;
-    color: #666;
-    font-weight: 500;
+    color: #FFC107;
+    font-weight: 600;
 }
 
 .action-buttons {
@@ -162,28 +177,36 @@ main {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
 }
 
 #reset-btn {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    color: white;
-    box-shadow: 0 5px 20px rgba(245, 87, 108, 0.3);
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
+    color: #1a1a1a;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+    border-color: #FFB300;
 }
 
 #reset-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, #FFC107 0%, #FFB300 100%);
 }
 
 #download-btn {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    color: white;
-    box-shadow: 0 5px 20px rgba(79, 172, 254, 0.3);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #FFD700;
+    box-shadow: 0 5px 20px rgba(26, 26, 26, 0.3);
+    border-color: #FFD700;
 }
 
 #download-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+    box-shadow: 0 8px 25px rgba(26, 26, 26, 0.4);
+    background: linear-gradient(135deg, #2d2d2d 0%, #424242 100%);
+    color: #FFF;
 }
 
 @media (max-width: 768px) {
